@@ -26,7 +26,7 @@
 
 .button1:hover {
     color: white;
-    box-shadow: 20px 10px 10px lightsteelblue;
+    box-shadow: 20px 10px 10p lightb;
 }
 
 .button2:hover {
@@ -41,15 +41,15 @@ body {
     padding: 0px;
     background-color: #000;
     background-image: radial-gradient(
-        #fff,
-        rgba(255, 255, 255, 0.2) 2px,
+        lightskyblue,
+        rgba(15, 90, 202, 0.2) 2px,
         transparent 40px
       ),
-      radial-gradient(#fff, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
-      radial-gradient(#fff, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+      radial-gradient(lightskyblue, rgba(24, 50, 136, 0.15) 1px, transparent 30px),
+      radial-gradient(lightskyblue, blue 2px, transparent 40px),
       radial-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.1) 2px,
+        lightskyblue,
+        rgba(8, 98, 158, 0.15) 2px,
         transparent 30px
       );
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
