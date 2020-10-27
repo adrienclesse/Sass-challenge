@@ -1,7 +1,12 @@
 
 $background-color:#000;
-$font-color:#2748b3;
+$font-color:blue;
 $padding: 16px;
+h1, h2, h6
+   {
+    color: #6b8eff;
+  }
+
 
 @mixin border-shadow($property) {
     -webkit-box-shadow: $property;
@@ -10,9 +15,39 @@ $padding: 16px;
 }
 
 #links {
-   display: flexbox;
-   flex-direction: row;
-   background-color: navy;
+    text-align: center;
+ }
+
+ .button {
+     
+        border: solid gray;
+        padding: 32px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+.button1{
+    background-color: blue;
+   
+}
+.button2{
+    background-color: red;
+   
+}
+
+.button1:hover {
+    color: white;
+    box-shadow: 20px 10px 10px blue;
+}
+
+.button2:hover {
+    color: white;
+    box-shadow: 20px 10px 10px  red;
 }
 
 
@@ -86,11 +121,7 @@ body {
     width: 40%;
   }
   
-  h1,
-  h2,
-  h6 {
-    color: #6b8eff;
-  }
+  
   
   h1 {
     text-align: center;
@@ -108,7 +139,7 @@ body {
     border: 1px solid #ccc;
     padding: 16px;
     margin: 16px;
-    color: $text-color;
+    color: $font-color;
     background-color: #000;
 }
 
@@ -135,7 +166,7 @@ body {
   text-align: center;
   a:link, a:visited {
     background-color: rgb(22, 20, 20);
-    color: $text-color;
+    color: $font-color;
     padding: 10px 20px;
     margin: 12px;
   }
