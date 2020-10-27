@@ -1,48 +1,27 @@
 
+$background-color:#000;
+$font-color:#2748b3;
+$padding: 16px;
+
+@mixin border-shadow($property) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+}
+
 #links {
-    text-align: center;
- }
-
- .button {
-     
-        border: solid gray;
-        padding: 32px 64px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-      }
-
-.button1{
-    background-color: blue;
-   
-}
-.button2{
-    background-color: red;
-   
+   display: flexbox;
+   flex-direction: row;
+   background-color: navy;
 }
 
-.button1:hover {
-    color: white;
-    box-shadow: 20px 10px 10px blue;
-}
 
-.button2:hover {
-    color: white;
-    box-shadow: 20px 10px 10px  red;
-}
-
-    
- 
 body {
     font: 100% "Space Mono", monospace;
-    color: #2748b3;
+    color: $font-color;
     margin: 0px;
     padding: 0px;
-    background-color: #000;
+    background-color: $background-color;
     background-image: radial-gradient(
         #fff,
         rgba(255, 255, 255, 0.2) 2px,
@@ -69,10 +48,8 @@ body {
     flex-grow: 1;
     flex-basis: 45%;
     border: 1px silver solid;
-    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    padding: 16px;
+    @include border-shadow(10px 10px 19px -4px rgba(255, 255, 255, 0.75)); 
+    padding: $padding;
     margin: 16px;
     clear: both;
     overflow: auto;
@@ -94,7 +71,7 @@ body {
     margin-bottom: 1.6em;
     max-width: 100%;
     overflow: auto;
-    padding: 16px;
+    padding: $padding;
     display: block;
     white-space: pre-wrap;
   }
@@ -122,29 +99,48 @@ body {
   h6 {
     text-align: center;
     font-size: 2em;
-    padding: 32px;
+    padding: 2*$padding;
     margin-bottom: 0px;
   }
-  
-  .message,
-  .success,
-  .error,
-  .warning {
+
+
+  %message-shared {
     border: 1px solid #ccc;
     padding: 16px;
     margin: 16px;
-    color: #2748b3;
+    color: $text-color;
     background-color: #000;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  background-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  background-color: rgb(247, 46, 46)
+}
+
+.warning {
+  @extend %message-shared;
+  background-color: orange;
+}
+
+.links {
+  text-align: center;
+  a:link, a:visited {
+    background-color: rgb(22, 20, 20);
+    color: $text-color;
+    padding: 10px 20px;
+    margin: 12px;
   }
+  a:hover, a:active {
+    background-color: rgb(41, 37, 37);
+  }
+}
   
-  .success {
-    background-color: green;
-  }
-  
-  .error {
-    background-color: red;
-  }
-  
-  .warning {
-    background-color: orange;
-  }
